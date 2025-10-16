@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Corretora {
-    private ArrayList<Acao> listaAcoes;
+    private List<Acao> listaAcoes;
 
     public Corretora() {
         listaAcoes = new ArrayList<Acao>();
@@ -40,8 +41,8 @@ public class Corretora {
             System.out.println("Não existe ações");
         }else {
             for(Acao acao : listaAcoes){
-                System.out.println("Ação: " + acao.getNome() + "Cotações: ");
-                acao.getCotacoes().exibirFila();
+                System.out.println("Ação: " + acao.getNome() + "Cotações: " + acao.getCotacoes());
+                
             }
         }
     }
