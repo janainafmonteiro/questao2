@@ -1,21 +1,23 @@
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 public class Acao {
-    private Fila cotacoes;
+    private Queue<Float> cotacoes;
     private String nome;
 
     public Acao(String nome) {
-        this.cotacoes = new Fila();
+        this.cotacoes = new ArrayDeque<>();
         this.nome = nome;
     }
     
-    public Fila getCotacoes() {
+    public Queue<Float> getCotacoes() {
         return cotacoes;
     }
     public void adicionarCotacao(float cotacao){
-        if(this.cotacoes.getTamanhoFila() == 10){
-            this.cotacoes.removerFila();
+        if(this.cotacoes.size() == 10){
+            this.cotacoes.poll();
         }
-        this.cotacoes.adicionarFila(cotacao);
+        this.cotacoes.offer(cotacao);
     }
 
     public String getNome() {
